@@ -1,13 +1,10 @@
 # hotelsSorting with Python
 
-## içeriğinde :
+## içeriğinde bulunanlar:
 
--trivagonun data seti
--bir python dosyası 
--bir jupyter notebook için python dosyası 
-
-bulunuyor.
-
+- trivagonun data seti
+- bir python dosyası 
+- bir jupyter notebook için python dosyası 
 
 
 
