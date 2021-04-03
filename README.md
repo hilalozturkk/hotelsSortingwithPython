@@ -1,10 +1,10 @@
 # hotelsSorting with Python
-
-## içeriğinde bulunanlar:
+## Projenin Amacı : otellere yapılan yorumların içinden kelimeler aratılarak kelime özelliklerine göre sıralama yaptırmak
+### içeriğinde bulunanlar:
 
 - trivagonun data seti
-- bir python dosyası 
-- bir jupyter notebook için python dosyası 
+- python dosyası 
+- jupyter notebook için python dosyası görünümü 
 
 
 
