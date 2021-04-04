@@ -100,7 +100,7 @@ print(toplam)
 
 
 i=0
-for x in liste3: 
+for x in liste3:   # örnek kelimelerin bulduğunu otellerin sıralanması
         print(i)
         print(liste3[i])
         i = i+1
@@ -121,7 +121,7 @@ while x<len(liste3):
 
         
 i=0
-for x in otelSayisi:
+for x in otelSayisi:  # örnek kelimelerin bulduğunu kaç farlı otel olduğunu sıralama baştan sona
      print(i ,"\t", x, "\n")
      i += 1
         
