@@ -3,23 +3,23 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import os
+import re
 
 
-
-df = pd.read_csv('chennai_reviews.csv')
+df = pd.read_csv('chennai_reviews.csv') #data set okuma
 df.head()
 
 
-liste = df["Hotel_name"]
+liste = df["Hotel_name"] #otel isimlerini listeleme
 print(liste)
 
 
 
 hotels = []
 x=1
-while x<len(liste):
+while x<len(liste):   
     
-        if df["Hotel_name"].loc[x] != df["Hotel_name"].loc[x-1] :
+        if df["Hotel_name"].loc[x] != df["Hotel_name"].loc[x-1] :  #kaç tane farklı otel olduğunu bulma
              hotels.append(df["Hotel_name"].loc[x-1])
          
         x += 1
@@ -27,7 +27,7 @@ while x<len(liste):
 
 
 i=0
-for x in hotels:
+for x in hotels:     #kaç tane farklı otel olduğunu yazdırma
      print(i ,"\t", x, "\n")
      i += 1
 
@@ -46,18 +46,18 @@ for x in hotels:
 
 
 
-m=df["Review_Text"]
+m=df["Review_Text"]   #Review_Text colonunu atama
 
 
-import re
+
 i = 0
 toplam = 0
 
 liste2 = df["Hotel_name"]
 liste3 = []
 for x in m :
-    text = x
-    search_great = "(Good?)|(good?)"
+    text = x   #tüm yorumları dolaşma
+    search_great = "(Good?)|(good?)"   
     search_great_counter = 0
 
     search_helpful = "(Helpful?)|(helpful?)"
@@ -66,7 +66,7 @@ for x in m :
     search_excellent = "(Excellent?)|(excellent?)"
     search_excellent_counter = 0
    
-    for match in re.finditer(search_great,text):
+    for match in re.finditer(search_great,text): #örnek kelimeleri bulma
         search_great_counter += 1
         print(match)
         print(search_great_counter)
@@ -74,7 +74,7 @@ for x in m :
         liste3.append(liste2[i]) 
         toplam = toplam + 1
         
-    for match in re.finditer(search_helpful,text):
+    for match in re.finditer(search_helpful,text): #örnek kelimeleri bulma
         search_helpful_counter += 1
         print(match)
         print(search_helpful_counter)  
@@ -94,13 +94,13 @@ for x in m :
     
 
 
-print("positive commit = ")    
+print("positive commit = ")   #bulduğumuz tüm pozitif yorumlar
 print(toplam)
 
 
 
 i=0
-for x in liste3:
+for x in liste3: 
         print(i)
         print(liste3[i])
         i = i+1
@@ -113,7 +113,7 @@ otelSayisi = []
 x=0
 while x<len(liste3):
     
-        if liste3[x] != liste3[x-1] :
+        if liste3[x] != liste3[x-1] :    
              otelSayisi.append(liste3[x])
              
         x =x + 1
@@ -128,13 +128,11 @@ for x in otelSayisi:
         
         
 c = Counter(liste3)  
-dict(c) #array için elamandan kaç tane var       
+dict(c)   #array içinde bulunan tüm elamanlardan  kaç tane olduğunu sorgular       
         
     
     
-    
-
-
-sorted(c)
+ 
+sorted(c) # en fazla sayıda elemanı olandan en küçüğe sıralama
 print(c)
 
