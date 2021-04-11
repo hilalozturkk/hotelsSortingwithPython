@@ -3,36 +3,37 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import os
-import re
 
 
-df = pd.read_csv('chennai_reviews.csv') #data set okuma
+# %%
+df = pd.read_csv('chennai_reviews.csv')
 df.head()
 
 
-liste = df["Hotel_name"] #otel isimlerini listeleme
+# %%
+liste = df["Hotel_name"]
 print(liste)
 
 
-
+# %%
 hotels = []
 x=1
-while x<len(liste):   
+while x<len(liste):
     
-        if df["Hotel_name"].loc[x] != df["Hotel_name"].loc[x-1] :  #kaç tane farklı otel olduğunu bulma
+        if df["Hotel_name"].loc[x] != df["Hotel_name"].loc[x-1] :
              hotels.append(df["Hotel_name"].loc[x-1])
          
         x += 1
 
 
-
+# %%
 i=0
-for x in hotels:     #kaç tane farklı otel olduğunu yazdırma
+for x in hotels:
      print(i ,"\t", x, "\n")
      i += 1
 
 
-
+# %%
 #m=df["Review_Text"].isin(["good"])
 #df[m]
 #df = df['Review_Text'].values
@@ -44,29 +45,25 @@ for x in hotels:     #kaç tane farklı otel olduğunu yazdırma
 #print(a)
 
 
+# %%
+
+m=df['Review_Text']=df['Review_Text'].apply(str)
 
 
-m=df["Review_Text"]   #Review_Text colonunu atama
-
-
-
+# %%
+import re
 i = 0
 toplam = 0
 
 liste2 = df["Hotel_name"]
 liste3 = []
 for x in m :
-    text = x   #tüm yorumları dolaşma
-    search_great = "(Good?)|(good?)"   
+    text = x
+    search_great = "(Good?)|(good?)"
     search_great_counter = 0
 
-    search_helpful = "(Helpful?)|(helpful?)"
-    search_helpful_counter = 0
-    
-    search_excellent = "(Excellent?)|(excellent?)"
-    search_excellent_counter = 0
    
-    for match in re.finditer(search_great,text): #örnek kelimeleri bulma
+    for match in re.finditer(search_great,text):
         search_great_counter += 1
         print(match)
         print(search_great_counter)
@@ -74,46 +71,32 @@ for x in m :
         liste3.append(liste2[i]) 
         toplam = toplam + 1
         
-    for match in re.finditer(search_helpful,text): #örnek kelimeleri bulma
-        search_helpful_counter += 1
-        print(match)
-        print(search_helpful_counter)  
-        print(liste2[i]) 
-        liste3.append(liste2[i]) 
-        toplam = toplam + 1
-    
-    for match in re.finditer(search_excellent,text):
-        search_excellent_counter += 1
-        print(match)
-        print(search_excellent_counter)
-        print(liste2[i]) 
-        liste3.append(liste2[i]) 
-        toplam = toplam + 1
+   
         
     i = i+1   
     
 
 
-print("positive commit = ")   #bulduğumuz tüm pozitif yorumlar
+# %%
+print("good|Good commit = ")    
 print(toplam)
 
 
-
+# %%
 i=0
-for x in liste3:   # örnek kelimelerin bulduğunu otellerin sıralanması
+for x in liste3:
         print(i)
         print(liste3[i])
         i = i+1
 
 
-
-
+# %%
 from collections import Counter
 otelSayisi = []
 x=0
 while x<len(liste3):
     
-        if liste3[x] != liste3[x-1] :    
+        if liste3[x] != liste3[x-1] :
              otelSayisi.append(liste3[x])
              
         x =x + 1
@@ -121,18 +104,37 @@ while x<len(liste3):
 
         
 i=0
-for x in otelSayisi:  # örnek kelimelerin bulduğunu kaç farlı otel olduğunu sıralama baştan sona
+for x in otelSayisi:
      print(i ,"\t", x, "\n")
      i += 1
         
         
         
 c = Counter(liste3)  
-dict(c)   #array içinde bulunan tüm elamanlardan  kaç tane olduğunu sorgular       
+dict(c) #array için elamandan kaç tane var       
         
     
     
- 
-sorted(c) # en fazla sayıda elemanı olandan en küçüğe sıralama
+    
+
+
+# %%
+sorted(c)
 print(c)
+
+
+# %%
+import collections
+with open("veriseti.txt") as f:
+    text = f.read()
+
+words = re.compile(r"[\w']+", re.U).findall(text)   # re.U == re.UNICODE
+counts = collections.Counter(words)
+print(counts)
+
+
+# %%
+
+
+
 
