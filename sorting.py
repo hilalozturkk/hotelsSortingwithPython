@@ -125,7 +125,7 @@ print(c)
 
 # %%
 import collections
-with open("veriseti.txt") as f:
+with open("veri.txt") as f:
     text = f.read()
 
 words = re.compile(r"[\w']+", re.U).findall(text)   # re.U == re.UNICODE
