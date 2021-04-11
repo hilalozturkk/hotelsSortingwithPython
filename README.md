@@ -6,6 +6,7 @@
     - chennai_reviews.csv
 - python dosyası 
 - jupyter notebook için python dosyası görünümü 
+- tüm yorumların bulunduğu txt dosyası en çok kullanılan kelimelerin sıralandırılması için 
 
 
 
