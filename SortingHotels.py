@@ -1,9 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[91]:
-
-
 import pandas as pd
 
 
@@ -337,7 +331,7 @@ for x in pozitif_dict: # pozitif_dict'in keyleri
 
 
 
-pozitif_dict= collections.Counter(pozitif_dict).most_common(20)                         
+pozitif_dict = collections.Counter(pozitif_dict).most_common(20)  #collections altında ->  most_common fonk. ilk 20 elemanı alıyor                  
 pprint.pprint(pozitif_dict)
 
 
@@ -356,64 +350,4 @@ with open("veri.txt") as f:      # with kullandık txt dosyasını açtırdık
 kelimeler = re.compile(r"[\w']+", re.U).findall(text)   # re.U == re.UNICODE
 collections_sayac = collections.Counter(kelimeler)
 print(collections_sayac)
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
 
