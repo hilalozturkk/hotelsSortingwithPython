@@ -1,5 +1,5 @@
 ### Hotels sorting with Python
-#### Projenin Amacı : otellere yapılan yorumların içinden kelimeler aratılarak kelime özelliklerine göre sıralama yaptırmak
+#### Projenin Amacı : otellere yapılan yorumların içinden belirlediğimiz pozitif kelime sayılarına ve negatif kelime ile farklarına göre sıralama yaptırmak
 ##### içeriğinde bulunanlar:
 
 - trivagonun data seti 
