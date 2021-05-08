@@ -12,7 +12,7 @@
 #### Projenin Özeti
 <br>   
 <br>
-   Bu bitirme projesi gerçek hayattan bir problemi temel alarak oluşturuldu. Büyük bir
+   Bu proje gerçek hayattan bir problemi temel alarak oluşturuldu. Büyük bir
 
 seyahat acentesinin sitesinde, sitede otel arayan birine otel sıralaması sadece SEO ve 
 
